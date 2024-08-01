@@ -2020,28 +2020,29 @@ lottie-player {
 }
 
 .col-lg-4 .info-box {
-    display: none; /* Initially hidden */
+    /* Initially hidden */
     position: absolute;
     bottom: -100px; /* Adjust as needed */
     left: 50%;
     top: 110px;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background for overlay effect */
+     /* Dark background for overlay effect */
     color:whitesmoke;
     padding: 10px;
     border-radius: 5px;
     z-index: 10;
-    height: 350px;
+    height: 370px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     width:200%; /* Adjust as needed */
     z-index: 10; /* Ensure it appears above other content */
    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */
 
 }
-
-.col-lg-4:hover .info-box {
-    display: inline-block; /* Show the info box on hover */
+.col-lg-4 .info-box .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
 }
+
+
 .col-lg-4 .info-box1 {
     display: none; /* Initially hidden */
     position: absolute;
@@ -2049,26 +2050,49 @@ lottie-player {
     left: 150%;
     top: 110px;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color:black;
+    background-color: white; /* Solid white background */
+    color: black; /* Text color */
     padding: 10px;
     border-radius: 5px;
-    z-index: 10;
     height: 350px;
-    width:200%; /* Adjust as needed */
+    width: 200%; /* Adjust as needed */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 10; /* Ensure it appears above other content */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */ 
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */
+    opacity: 1;
+    z-index: 10;
 }
-.info-box1 div{
-    display: inline-block;
-}
-no-gutters svg:hover{
-    color: orange;
-}
+
 .col-lg-4:hover .info-box1{
-    display: inline-block; /* Show the info box on hover */
+    display:inline-block; 
+    background-color: white;/* Show the info box on hover */
 }
+.info-box1 div {
+    display: inline-block;
+    background-color:white;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;  /* Light gray border */
+    padding: 10px;           /* Space inside the border */
+    margin-bottom: 20px;     /* Space below each div */
+    border-radius: 8px;      /* Rounded corners */
+     /* Light background color */  
+     z-index: 10;
+    }
+    
+    /* Styling for headings */
+    .info-box1 h5 {
+    color: #333;                       /* Dark text color */
+    margin-bottom: 10px;               /* Space below the heading */
+    }
+    
+    /* Styling for paragraphs */
+    .info-box1 p {
+    color: #555;                       /* Slightly lighter text color */
+    font-size: 12px;
+    }
 .col-lg-4 .info-box2 {
     display: none; /* Initially hidden */
     position: absolute;
@@ -2077,13 +2101,12 @@ no-gutters svg:hover{
     top: 110px;
     right: 240%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: whitesmoke;
     color:black;
     padding: 10px;
     border-radius: 5px;
-    z-index: 10;
-    height: 350px;
-    width:200%; /* Adjust as needed */
+    height: 370px;
+    width:220%; /* Adjust as needed */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 10; /* Ensure it appears above other content */
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */ 
@@ -2095,27 +2118,7 @@ no-gutters svg:hover{
     display: inline-block; /* Show the info box on hover */
 /* General styling for all divs */
 }
-.info-box1 div {
-border: 1px solid #ccc;  /* Light gray border */
-padding: 10px;           /* Space inside the border */
-margin-bottom: 20px;     /* Space below each div */
-border-radius: 8px;      /* Rounded corners */
-background-color: #f9f9f9; /* Light background color */
 
-
-}
-
-/* Styling for headings */
-.info-box1 h5 {
-color: #333;                       /* Dark text color */
-margin-bottom: 10px;               /* Space below the heading */
-}
-
-/* Styling for paragraphs */
-.info-box1 p {
-color: #555;                       /* Slightly lighter text color */
-font-size: 12px;
-}
 .industry-list {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next row */
@@ -2162,6 +2165,32 @@ font-size: 12px;
     color: #333; /* Text color */
 }
 
+/* demo btn */
+.demo-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.icon-container {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-1, .icon-2, .icon-3, .icon-4 {
+    width: 24px;
+    height: 24px;
+}
+
+.demo-button svg {
+    width: 100%;
+    height: 100%;
+}
 
 
 
