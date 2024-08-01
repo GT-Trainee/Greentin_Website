@@ -178,19 +178,23 @@
     color: white;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); /* Gradient background */
     border: none;
-    border-radius: 0%; /* Perfectly round */
+    border-radius: 50%; /* Perfectly round */
     text-decoration: none;
     box-shadow: 0 4px 6px orange;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Only animate color and shadow */
     position: absolute; /* Positioning the button absolutely */
-    right: -30%; /* Move 20px to the right */
-    top: 98%; /* Center vertically */
-    transform: translateY(-90%); /* Center vertically */
+    right: 10px; /* Adjust right position as needed */
+    bottom: 0px; /* Adjust bottom position as needed */
+    transform: translateY(0); /* No vertical transform to prevent toggling */
 }
+
 .btn-buy-now:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 8px orange; /* Slightly larger shadow on hover */
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%); /* Reverse gradient on hover */
+    /* No position-related changes to prevent toggling */
 }
+
+
 
 /* styles.css */
 #navbar {
@@ -1451,6 +1455,60 @@ lottie-player {
         display: none !important;
     }
 }
+.card-container {
+    position: relative; /* Positioning context for the content */
+    display: inline-block; /* Ensure the hover effect works properly */
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.team-image-box {
+    position: relative; /* Positioning context for the image */
+}
+
+.card-img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove default inline spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.card-body {
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding for the card body */
+    z-index: 1; /* Ensure card body appears above the content */
+}
+
+/* Initially hide the card content */
+.card-content {
+    display: none; /* Hide by default */
+    position: absolute; /* Position content absolutely */
+    bottom: -270px; /* Align to the bottom of the container */
+    left: 0; /* Align to the left of the container */
+    width: 100%; /* Full width of the container */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for overlay effect */
+    color: #fff; /* White text color */
+    padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    z-index: 10; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */
+    opacity: 0; /* Hide content by default */
+    visibility: hidden; /* Hide content by default */
+}
+
+/* Show the card content when hovering over the card container */
+.card-container:hover .card-content {
+    display: block; /* Show the content */
+    opacity: 1; /* Ensure content is fully opaque */
+    visibility: visible; /* Ensure content is visible */
+}
+
+/* Optional styles for the card content */
+.card-content p {
+    margin: 0; /* Remove default margin */
+}
+
 /* Section technology */
 
 .container.increase-speed {
@@ -1684,3 +1742,431 @@ lottie-player {
 .section-technology .non-sprite-tech.appcenter {
   background-image: url(../images/mobile/appcenter.png);
 } */
+
+
+/* General Styles */
+.swiper-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbars for WebKit browsers */
+.swiper-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Swiper Wrapper */
+.swiper-wrapper {
+    display: flex;
+}
+
+/* Swiper Slide */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 10px;
+
+}
+
+/* Testimonial Content */
+.mkd-testimonial-content {
+    background-color: rgba(51, 51, 51, 0.1);
+    border: 1px solid rgba(68, 68, 68, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Testimonial Text */
+.mkd-testimonial-title,
+.mkd-testimonial-text,
+.mkd-testimonial-author,
+.mkd-testimonial-job {
+    color: grey;
+    font-size: 14px;
+}
+
+/* Testimonial Bottom Section */
+.mkd-testimonial-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.mkd-testimonial-image-holder {
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mkd-testimonial-image-holder img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next, .swiper-button-prev {
+    color: #000;
+}
+
+/* Testimonial Bottom Section */
+.mkd-testimonial-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.mkd-testimonial-image-holder {
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mkd-testimonial-image-holder img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next, .swiper-button-prev {
+    color: #000;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .swiper-slide {
+        width: 100%; /* Ensure only one slide is shown at a time */
+    }
+
+    .mkd-testimonial-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-reviews h4 {
+        font-size: 20px;
+    }
+
+    .landing-reviews p {
+        font-size: 14px;
+    }
+}
+
+/* career */
+.openings__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Center align the items */
+    
+}
+
+.openings__row {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.openings__row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.current-openings__text-wrapper {
+    padding: 15px;
+    text-align: left;
+}
+
+.hiring {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.current-openings__title-hyperlink {
+    text-decoration: none;
+    color: #333;
+}
+
+.current-openings__title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.current-openings__desc {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.link-cta {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.link-cta .fa {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.link-cta:hover .fa {
+    transform: translateX(5px);
+}
+/* support business line */
+.industry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the items */
+    padding: 20px; /* Padding around the container */
+    background-color: #f9f9f9; /* Background color of the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Adjust the width as needed */
+}
+
+.industry-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+.industry-item i {
+    font-size: 1.5em; /* Adjust icon size as needed */
+    color: #007bff; /* Icon color */
+}
+/* General Section Styling */
+.elementor-section {
+    padding: 20px; /* Adjust padding as needed */
+    margin: 0 auto; /* Centers the section */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Section Heading Styling */
+.elementor-section .elementor-heading-title {
+    font-size: 2rem; /* Font size for the section heading */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Section Text Styling */
+.elementor-section .elementor-text-editor {
+    font-size: 1rem; /* Font size for text content */
+    color: #666; /* Lighter text color */
+    line-height: 1.6; /* Spacing between lines of text */
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Space below text content */
+}
+
+/* Section Button Styling */
+.elementor-section .elementor-button {
+    display: inline-block; /* Inline block for button */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Font size for button text */
+    color: #fff; /* Button text color */
+    background-color: #FF6600; /* Button background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    text-align: center; /* Center align text inside button */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button Hover Effect */
+.elementor-section .elementor-button:hover {
+    background-color: #e55a00; /* Darker orange on hover */
+}
+
+/* Section Image Styling */
+.elementor-section .elementor-image img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for image */
+}
+
+
+
+/*  */
+.col-lg-4 {
+    position: relative; /* Position relative for positioning the tooltip */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-lg-4 .info-box {
+    display: none; /* Initially hidden */
+    position: absolute;
+    bottom: -100px; /* Adjust as needed */
+    left: 50%;
+    top: 110px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for overlay effect */
+    color:whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    width:200%; /* Adjust as needed */
+    z-index: 10; /* Ensure it appears above other content */
+   transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */
+
+}
+
+.col-lg-4:hover .info-box {
+    display: inline-block; /* Show the info box on hover */
+}
+.col-lg-4 .info-box1 {
+    display: none; /* Initially hidden */
+    position: absolute;
+    bottom: -100px; /* Adjust as needed */
+    left: 150%;
+    top: 110px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color:black;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    height: 350px;
+    width:200%; /* Adjust as needed */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */ 
+}
+.info-box1 div{
+    display: inline-block;
+}
+no-gutters svg:hover{
+    color: orange;
+}
+.col-lg-4:hover .info-box1{
+    display: inline-block; /* Show the info box on hover */
+}
+.col-lg-4 .info-box2 {
+    display: none; /* Initially hidden */
+    position: absolute;
+    bottom: -100px; /* Adjust as needed */
+    left: -50%;
+    top: 110px;
+    right: 240%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color:black;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    height: 350px;
+    width:200%; /* Adjust as needed */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */ 
+}
+.info-box2 div{
+    display: inline-block;
+}
+.col-lg-4:hover .info-box2{
+    display: inline-block; /* Show the info box on hover */
+/* General styling for all divs */
+}
+.info-box1 div {
+border: 1px solid #ccc;  /* Light gray border */
+padding: 10px;           /* Space inside the border */
+margin-bottom: 20px;     /* Space below each div */
+border-radius: 8px;      /* Rounded corners */
+background-color: #f9f9f9; /* Light background color */
+
+
+}
+
+/* Styling for headings */
+.info-box1 h5 {
+color: #333;                       /* Dark text color */
+margin-bottom: 10px;               /* Space below the heading */
+}
+
+/* Styling for paragraphs */
+.info-box1 p {
+color: #555;                       /* Slightly lighter text color */
+font-size: 12px;
+}
+.industry-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 10px; /* Space between items */
+}
+
+.industry-item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 calc(33.333% - 10px); /* 3 items per row minus the gap */
+    margin-bottom: 10px; /* Space between rows */
+}
+
+.industry-item i {
+    color: orange; /* Icon color */
+    font-size: 24px; /* Icon size */
+    margin-right: 8px; /* Space between icon and text */
+}
+.industry-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if they overflow */
+    justify-content: center; /* Center the items horizontally */
+    gap: 20px; /* Space between items */
+}
+
+.industry-item {
+    display: flex;
+    align-items: center; /* Vertically center the icon and text */
+    gap: 10px; /* Space between the icon and text */
+    background-color: #f9f9f9; /* Light background for the items */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Light border for visual separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.industry-item i {
+    font-size: 24px; /* Adjust icon size */
+    color: orange; /* Icon color */
+}
+
+.industry-item span {
+    font-size: 14px; /* Font size for the text */
+    color: #333; /* Text color */
+}
+
+
+
+
+
+
+
+
+
