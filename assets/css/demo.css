@@ -166,6 +166,22 @@
         visibility: hidden;
     }
 }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pre-loader img {
+        width: 70px; /* Reduce the size of the loader image */
+        max-width: 70px; /* Optional: Set a maximum width for better control */
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pre-loader img {
+        width: 70px; /* Further reduce the size of the loader image */
+        max-width: 70px; /* Optional: Set a smaller maximum width */
+        height: 70px;
+    }
+}
 /* whatsapp icon */
 
 .btn-buy-now {
@@ -777,6 +793,23 @@
         order: 1;
     }
 }
+
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    dotlottie-player {
+        max-width: 300px; /* Adjust max-width for tablets */
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    dotlottie-player {
+        max-width: 300px; /* Adjust max-width for mobile devices */
+        height: 300px;
+    }
+}
+
 
 /* .we-offer-wrap h3{
   color: #0eccd8;
@@ -2010,13 +2043,52 @@ lottie-player {
 }
 
 
-
+/* Hide on small screens */
+@media (max-width: 576px) {
+    .info-box {
+        display: none; /* Hide the info box on small screens */
+    }
+}
+/* Hide on small screens */
+@media (max-width: 576px) {
+    .info-box1{
+        display: none; /* Hide the info box on small screens */
+    }
+}
+@media (max-width: 768px) {
+    .info-box1{
+        display: none; /* Hide the info box on small screens */
+    }
+}
+@media (max-width: 1024px) {
+    .info-box .card{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    .info-box{
+        display: none; /* Hide the info box on small screens */
+    }
+}
+@media (max-width: 768px) {
+    .info-box2{
+        display: none; /* Hide the info box on small screens */
+    }
+}
+/* Hide on small screens */
+@media (max-width: 576px) {
+    .info-box2 {
+        display: none; /* Hide the info box on small screens */
+    }
+}
 /*  */
 .col-lg-4 {
     position: relative; /* Position relative for positioning the tooltip */
     text-align: center;
     display: flex;
     flex-direction: column;
+    height: auto;
 }
 
 .col-lg-4 .info-box {
@@ -2028,11 +2100,11 @@ lottie-player {
     transform: translateX(-50%);
      /* Dark background for overlay effect */
     color:whitesmoke;
-    padding: 10px;
+    
     border-radius: 5px;
     z-index: 10;
-    height: 370px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  */
     width:200%; /* Adjust as needed */
     z-index: 10; /* Ensure it appears above other content */
    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility and opacity */
